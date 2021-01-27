@@ -4,29 +4,9 @@ import gambar from './images/our-story-1.jpg'
 import { FaBars, FaTimes, FaChevronUp, CgAsterisk} from 'react-icons/fa'
 import Aos from "aos";
 import "aos/dist/aos.css";
-import manifest from "./manifest.json"
 
 
 export default function App () {
-
-	// window.addEventListener('load', e => {
-	// 	new PWAConfApp();
-	// 	registerSW();
-	// })
-
-	// async function registerSW() { 
-	// 	if ('serviceWorker' in navigator) { 
-	// 	  try {
-	// 		await navigator.serviceWorker.register('./sw.js'); 
-	// 	  } catch (e) {
-	// 		alert('ServiceWorker registration failed. Sorry about that.'); 
-	// 	  }
-	// 	} else {
-	// 	  document.querySelector('.alert').removeAttribute('hidden'); 
-	// 	}
-	//   }
-
-
 	useEffect(() => {
 		Aos.init({ duration: 3000});
 	}, [])
