@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../src/index.css'
 import gambar from './images/our-story-1.jpg'
-import { FaBars, FaTimes, FaChevronUp, CgAsterisk} from 'react-icons/fa'
+import { FaBars, FaTimes, FaChevronUp} from 'react-icons/fa'
 import Aos from "aos";
 import "aos/dist/aos.css";
 
