@@ -128,7 +128,7 @@ header {
   transform: scale(0);
 }
 
-.nav-iem {
+.nav-item {
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -163,6 +163,9 @@ header {
   font-weight: 100;
   line-height: 0.4;
   letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeUp .5s forwards;
+  animation-delay: .5s;
 }
 
 .first-letter {
@@ -178,6 +181,7 @@ header {
   font-weight: 900;
   letter-spacing: 0.5rem;
   margin-left: 0.5rem;
+  animation: scale .5s forwards;
 }
 
 .seperator {
@@ -192,6 +196,10 @@ header {
   height: 0.25rem;
   background-color: #fff;
   position: relative;
+  opacity: 0;
+  animation: grow 2s forwards;
+  animation-delay: .9s;
+
 }
 
 .line-right::before,
@@ -201,6 +209,9 @@ header {
   top: 50%;
   transform: translateY(-50%);
   border: 0.6rem solid transparent;
+  opacity: 0;
+  animation: grow .5s forwards;
+  animation-delay: 1.2s;
 }
 
 .line-right::before {
@@ -218,6 +229,14 @@ header {
   color: var(--secondary-font-color);
   margin: 0 1.6em;
 }
+
+.single-animation{
+  opacity: 0;
+  margin-top: 5px;
+  animation: fadeDown .5s forwards;
+  animation-delay: 1.5s;
+}
+
 
 .headline-description h5 {
   color: #fff;
@@ -377,6 +396,7 @@ footer {
   color: #fff;
   font-size: 2rem;
   padding: 2rem;
+  animation: up 2s infinite;
 }
 
 .footer-content {
@@ -448,4 +468,139 @@ footer {
   top: 15%;
   transform: translateY(-50%);
   margin-left: 10.5rem;
+}
+
+/* Media Queries */
+
+@media screen and (min-widht: 900px){
+  section{
+    padding: 7.9rem;
+  }
+
+  .menu-toggle{
+    display: none;
+  }
+
+  .nav{
+    justify-content: space-between;
+  }
+
+  .nav-list{
+    position: initial;
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    padding: 0;
+    justify-content: initial;
+    flex-direction: row;
+    transform: initial;
+    transition: initial;
+  }
+
+  .nav-item{
+    margin: 0 2.4rem;
+    border: none;
+  }
+
+  .nav-item:last-child{
+    margin-right: 0;
+  }
+
+  .nav-link{
+    font-size: 1.3rem;
+  }
+
+  .active{
+    position: relative;
+  }
+
+  .active::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #fff;
+    left: 0;
+    bottom: -3px;
+  }
+
+  .sub-headline{
+    font-size: 18rem;
+
+  }
+
+  .first-letter{
+    font-size: 12.2rem;
+
+  }
+
+  .headline{
+    font-size: 4.7rem;
+    letter-spacing: .8rem;
+  }
+
+  .line{
+    max-width: 11.4rem;
+  }
+
+  .restaurant-info{
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+/* Animation */
+
+@keyframes fadeUp {
+  0%{
+    transform: translateY(4rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale {
+  0%{
+    transform: scale(2);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0%{
+    width: 0;
+  }
+  100%{
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@keyframes fadeDown {
+  0%{
+    transform: translateY(-1rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes up {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
 }

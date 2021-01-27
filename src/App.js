@@ -1,9 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../src/index.css'
 import gambar from './images/our-story-1.jpg'
-import { FaBars, FaTimes, FaChevronUp} from 'react-icons/fa'
+import { FaBars, FaTimes, FaChevronUp, CgAsterisk} from 'react-icons/fa'
+import Aos from "aos";
+import "aos/dist/aos.css";
+import manifest from "./manifest.json"
+
 
 export default function App () {
+
+	// window.addEventListener('load', e => {
+	// 	new PWAConfApp();
+	// 	registerSW();
+	// })
+
+	// async function registerSW() { 
+	// 	if ('serviceWorker' in navigator) { 
+	// 	  try {
+	// 		await navigator.serviceWorker.register('./sw.js'); 
+	// 	  } catch (e) {
+	// 		alert('ServiceWorker registration failed. Sorry about that.'); 
+	// 	  }
+	// 	} else {
+	// 	  document.querySelector('.alert').removeAttribute('hidden'); 
+	// 	}
+	//   }
+
+
+	useEffect(() => {
+		Aos.init({ duration: 3000});
+	}, [])
+
 	const [ isOpen, setIsOpen ] = useState(false)
 	let sideStyle = ''
 
@@ -67,7 +94,7 @@ export default function App () {
 					<div className='headline-description'>
 						<div className='seperator'>
 							<div className='line line-left' />
-							<div className='asterisk'>
+							<div className='CgAsterisk'>
 								<i className='fas fa-asterisk' />
 							</div>
 							<div className='line line-right' />
@@ -81,7 +108,7 @@ export default function App () {
 					</div>
 				</div>
 			</section>
-			<section className='discover-our-story'>
+			<section data-aos="fade-up" className='discover-our-story'>
 				<div className='container'>
 					<div className='restaurant-info'>
 						<div className='restaurant-description padding-right animate-left'>
@@ -109,7 +136,7 @@ export default function App () {
 					</div>
 				</div>
 			</section>
-			<section className='tasteful-recipes between'>
+			<section data-aos="fade-up" className='tasteful-recipes between'>
 				<div className='container'>
 					<div className='global-headline'>
 						<div className='animate-top'>
@@ -157,7 +184,7 @@ export default function App () {
 					</div>
 				</div>
 			</section>
-			<section className='perfect-blend between'>
+			<section data-aos="fade-up" className='perfect-blend between'>
 				<div className='container'>
 					<div className='global-headline'>
 						<div className='animate-top'>
